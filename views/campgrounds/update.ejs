@@ -1,0 +1,87 @@
+<% layout('layouts/boilerplate')%>
+
+<h1 class="text-center"> Update <%= campground.title  %> </h1>
+
+<!-- Update form -->
+
+<form action="/campgrounds/<%=campground._id%>?_method=PUT " method="POST" class="row g-3 needs-validation" novalidate>
+
+    <!-- title -->            
+    <label class="form-label" for="title" id = 'title' name="campground[title]">Enter Name of the campground</label>
+    <input type="text" class="form-control" id="title" name="campground[title]" value="<%=campground.title %> " required>
+    <div class="valid-feedback">
+        Looks good!
+    </div>
+    <div class="invalid-feedback">
+        Please enter the name of the campground
+    </div>
+    <!-- location -->
+
+</div>
+<div class="mb-3">
+    <label class="form-label" for="location" id = "location" name = 'campground[location]'>Enter location of the campground</label>
+    <input type="text" class="form-control" id="location" name = 'campground[location]' value="<%=campground.location %> " required>
+    <div class="valid-feedback">
+        Looks good!
+    </div>
+    <div class="invalid-feedback">
+        Please enter the location of the campground
+    </div>
+
+</div>
+<!-- price -->
+<div class="mb-3">
+    <label for="price" id="price">Price</label>
+    <div class="input-group mb-3">
+        <span class="input-group-text">$</span>
+        <input type="number" name="campground[price]" value="<%=campground.price %>" class="form-control" for="price" id="price" aria-label="Amount (to the nearest dollar)" required>
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+        <div class="invalid-feedback">
+            Please enter the price per night of the campground
+        </div>
+    </div>
+</div>
+<!-- image -->
+<div class="mb-3">
+    <label class="form-label" for="image" id = 'image' name="campground[image]">Campground Image URL </label>
+    <input type="text" class="form-control" id="image" name="campground[image]" value="<%=campground.image %>" required>
+    <div class="valid-feedback">
+        Looks good!
+    </div>
+    <div class="invalid-feedback">
+        Please enter the image URL of the campground
+    </div>
+</div>
+<!-- description -->
+<div class="mb-3">
+    <label class="form-label" for="description" id = 'description' name="campground[description]">Description </label>
+    <textarea type="text" class="form-control" id="description" name="campground[description]"  required><%=campground.description%></textarea>
+    <div class="valid-feedback">
+        Looks good!
+    </div>
+    <div class="invalid-feedback">
+        Please enter a description for the campground
+    </div>
+</div>
+
+<button class="btn btn-success">Update Campgrounds</button>
+<br>
+
+                    
+</form>
+<br>
+<a href="/campgrounds"><button>All Campgrounds</button></a>
+<br><br>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
